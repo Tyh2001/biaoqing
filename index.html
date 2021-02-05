@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>表情发布系统</title>
+  <link rel="stylesheet" href="./css/index.css">
+</head>
+
+<body>
+  <div class="box">
+    <h3 class="title">Tyh 模拟表情发布测试系统 1.1版</h3>
+    <textarea id="textarea" placeholder="今天有什么想说的？" maxlength="399"></textarea>
+    <button class="release-btn">发布</button>
+
+    <!-- 表情列表 -->
+    <div class="AddEmoticonsBox">
+      <div class="top">
+        <span class="wordsSwitch" style="color: #ff8140;">emoji表情</span>
+        <span class="wordsSwitch">QQ表情</span>
+        <span class="wordsSwitch">颜文字</span>
+      </div>
+      <!-- emoji 表情 -->
+      <div class="expressionMenu" style="display: block;">
+        <ul>
+          <li class="emojeLi" alt="[em_1]" title="高兴">
+            <img src="表情/emoji表情/1.png">
+          </li>
+          <li class="emojeLi" alt="[em_2]" title="大哭">
+            <img src="表情/emoji表情/2.png">
+          </li>
+          <li class="emojeLi" alt="[em_3]" title="紧张">
+            <img src="表情/emoji表情/3.png">
+          </li>
+          <li class="emojeLi" alt="[em_4]" title="可爱">
+            <img src="表情/emoji表情/4.png">
+          </li>
+          <li class="emojeLi" alt="[em_5]" title="亲亲">
+            <img src="表情/emoji表情/5.png">
+          </li>
+          <li class="emojeLi" alt="[em_6]" title="生气">
+            <img src="表情/emoji表情/6.png">
+          </li>
+          <li class="emojeLi" alt="[em_7]" title="淘气">
+            <img src="表情/emoji表情/7.png">
+          </li>
+          <li class="emojeLi" alt="[em_8]" title="难受">
+            <img src="表情/emoji表情/8.png">
+          </li>
+          <li class="emojeLi" alt="[em_9]" title="呲牙">
+            <img src="表情/emoji表情/9.png">
+          </li>
+          <li class="emojeLi" alt="[em_10]" title="笑哭">
+            <img src="表情/emoji表情/10.png">
+          </li>
+          <li class="emojeLi" alt="[em_11]" title="色">
+            <img src="表情/emoji表情/11.png">
+          </li>
+          <li class="emojeLi" alt="[em_12]" title="忧愁">
+            <img src="表情/emoji表情/12.png">
+          </li>
+          <li class="emojeLi" alt="[em_13]" title="飞吻">
+            <img src="表情/emoji表情/13.png">
+          </li>
+          <li class="emojeLi" alt="[em_14]" title="失落">
+            <img src="表情/emoji表情/14.png">
+          </li>
+          <li class="emojeLi" alt="[em_15]" title="害怕">
+            <img src="表情/emoji表情/15.png">
+          </li>
+          <li class="emojeLi" alt="[em_16]" title="恐惧">
+            <img src="表情/emoji表情/16.png">
+          </li>
+          <li class="emojeLi" alt="[em_17]" title="不屑">
+            <img src="表情/emoji表情/17.png">
+          </li>
+          <li class="emojeLi" alt="[em_18]" title="冒金星">
+            <img src="表情/emoji表情/18.png">
+          </li>
+          <li class="emojeLi" alt="[em_19]" title="哼哼">
+            <img src="表情/emoji表情/19.png">
+          </li>
+          <li class="emojeLi" alt="[em_20]" title="汗">
+            <img src="表情/emoji表情/20.png">
+          </li>
+
+        </ul>
+      </div>
+
+      <!-- QQ 表情 -->
+      <div class="expressionMenu">
+        <ul>
+          <li class="QQLi" alt="[qq_1]" title="微笑">
+            <img src="表情/QQ表情/1.gif">
+          </li>
+          <li class="QQLi" alt="[qq_2]" title="撇嘴">
+            <img src="表情/QQ表情/2.gif">
+          </li>
+          <li class="QQLi" alt="[qq_3]" title="色">
+            <img src="表情/QQ表情/3.gif">
+          </li>
+          <li class="QQLi" alt="[qq_4]" title="发呆">
+            <img src="表情/QQ表情/4.gif">
+          </li>
+          <li class="QQLi" alt="[qq_5]" title="流泪">
+            <img src="表情/QQ表情/5.gif">
+          </li>
+          <li class="QQLi" alt="[qq_6]" title="害羞">
+            <img src="表情/QQ表情/6.gif">
+          </li>
+          <li class="QQLi" alt="[qq_7]" title="闭嘴">
+            <img src="表情/QQ表情/7.gif">
+          </li>
+          <li class="QQLi" alt="[qq_8]" title="睡">
+            <img src="表情/QQ表情/8.gif">
+          </li>
+          <li class="QQLi" alt="[qq_9]" title="大哭">
+            <img src="表情/QQ表情/9.gif">
+          </li>
+          <li class="QQLi" alt="[qq_10]" title="尴尬">
+            <img src="表情/QQ表情/10.gif">
+          </li>
+          <li class="QQLi" alt="[qq_11]" title="发怒">
+            <img src="表情/QQ表情/11.gif">
+          </li>
+          <li class="QQLi" alt="[qq_12]" title="调皮">
+            <img src="表情/QQ表情/12.gif">
+          </li>
+          <li class="QQLi" alt="[qq_13]" title="呲牙">
+            <img src="表情/QQ表情/13.gif">
+          </li>
+          <li class="QQLi" alt="[qq_14]" title="惊讶">
+            <img src="表情/QQ表情/14.gif">
+          </li>
+          <li class="QQLi" alt="[qq_15]" title="难过">
+            <img src="表情/QQ表情/15.gif">
+          </li>
+          <li class="QQLi" alt="[qq_16]" title="冷汗">
+            <img src="表情/QQ表情/16.gif">
+          </li>
+          <li class="QQLi" alt="[qq_17]" title="抓狂">
+            <img src="表情/QQ表情/17.gif">
+          </li>
+          <li class="QQLi" alt="[qq_18]" title="吐">
+            <img src="表情/QQ表情/18.gif">
+          </li>
+          <li class="QQLi" alt="[qq_19]" title="偷笑">
+            <img src="表情/QQ表情/19.gif">
+          </li>
+          <li class="QQLi" alt="[qq_20]" title="可爱">
+            <img src="表情/QQ表情/20.gif">
+          </li>
+          <li class="QQLi" alt="[qq_21]" title="白眼">
+            <img src="表情/QQ表情/21.gif">
+          </li>
+          <li class="QQLi" alt="[qq_22]" title="傲慢">
+            <img src="表情/QQ表情/22.gif">
+          </li>
+          <li class="QQLi" alt="[qq_23]" title="饥饿">
+            <img src="表情/QQ表情/23.gif">
+          </li>
+          <li class="QQLi" alt="[qq_24]" title="困">
+            <img src="表情/QQ表情/24.gif">
+          </li>
+        </ul>
+      </div>
+
+      <!-- 颜文字 -->
+      <div class="expressionMenu">
+        <ul>
+          <li class="Emoticons">(*^▽^*)</li>
+          <li class="Emoticons">(^_−)☆</li>
+          <li class="Emoticons">o(´^｀)o</li>
+          <li class="Emoticons">o(╥﹏╥)o</li>
+          <li class="Emoticons">→_→</li>
+          <li class="Emoticons">ψ(｀ー´)ψ</li>
+          <li class="Emoticons">(•́へ•́╬)</li>
+          <li class="Emoticons">(ー_ー)</li>
+          <li class="Emoticons">|ू･ω･` )</li>
+          <li class="Emoticons">(✪ω✪)</li>
+          <li class="Emoticons">(ಥ_ಥ)</li>
+          <li class="Emoticons">┗( ▔, ▔ )┛</li>
+          <li class="Emoticons">(‾◡◝)</li>
+          <li class="Emoticons">(≧∇≦)ﾉ</li>
+          <li class="Emoticons">(❁´◡`❁)</li>
+          <li class="Emoticons">(*＾-＾*)</li>
+          <li class="Emoticons">(*^_^*)</li>
+          <li class="Emoticons">`(*>﹏0*)′</li>
+          <li class="Emoticons">(✿◡‿◡)</li>
+          <li class="Emoticons">O(∩_∩)O</li>
+          <li class="Emoticons">( •̀ ω •́ )✧</li>
+          <li class="Emoticons">0.0</li>
+          <li class="Emoticons">-.-</li>
+          <li class="Emoticons">ƪ(˘⌣˘)ʃ</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- 展示内容 -->
+    <h4>你发布的内容是：</h4>
+    <ol class="testBoxTitle"></ol>
+  </div>
+
+  <div class="footer">
+    <p>版本号：1.1</p>
+    <p>更新时间：2021-2-5</p>
+    <p>修复Bug：再次发布表情直接被替换掉问题</p>
+    <p>新增内容：每次发布不会替换之前的内容，而是会继续添加</p>
+    <p>下个版本计划更新：多图片上传预览</p>
+  </div>
+
+  <script src="Js/My_jQ.js"></script>
+  <script>
+    // 表情菜单切换选项卡
+    let wordsSwitch = $Al(".wordsSwitch");
+    let expressionMenu = $Al(".expressionMenu");
+    for (let i = 0; i < expressionMenu.length; i++) {
+      wordsSwitch[i].onclick = function () {
+        for (let j = 0; j < expressionMenu.length; j++) {
+          expressionMenu[j].style.display = "none";
+          wordsSwitch[j].style.color = "black";
+        }
+        expressionMenu[i].style.display = "block";
+        wordsSwitch[i].style.color = "#ff8140";
+      }
+    }
+
+    // 添加颜文字表情
+    let Emoticons = $Al(".Emoticons");
+    for (let i = 0; i < Emoticons.length; i++) {
+      Emoticons[i].onclick = function () {
+        $D("textarea").value += ` ${Emoticons[i].innerHTML} `;
+      }
+    }
+
+    // 添加Emoje表情
+    let emojeLi = $Al(".emojeLi");
+    for (let i = 0; i < emojeLi.length; i++) {
+      emojeLi[i].onclick = function () {
+        // 获取到点击表情的 alt 属性 并且加到文本框内
+        const emojeLiAlt = emojeLi[i].getAttribute("alt");
+        $D("textarea").value += emojeLiAlt;
+      }
+    }
+
+    // 添加QQ表情
+    let QQLi = $Al(".QQLi");
+    for (let i = 0; i < QQLi.length; i++) {
+      QQLi[i].onclick = function () {
+        const QQLiAlt = QQLi[i].getAttribute("alt");
+        $D("textarea").value += QQLiAlt;
+      }
+    }
+
+    // 点击发布按钮
+    $(".release-btn").onclick = function () {
+      if ($D("textarea").value === "") {
+        alert("内容为空不能发表！")
+      } else {
+        // 表情替换
+        let textareaVal = $D("textarea").value;
+        textareaVal = transformation(textareaVal);
+        const newLi = document.createElement("li");
+        newLi.innerHTML = textareaVal;
+        $(".testBoxTitle").appendChild(newLi);
+        // 清空文本框
+        $D("textarea").value = "";
+      }
+    }
+
+    // 表情转换
+    function transformation(str) {
+      str = str.replace(/\[em_([0-9]*)\]/g, "<img src='表情/emoji表情/$1.png'>");
+      str = str.replace(/\[qq_([0-9]*)\]/g, "<img src='表情/QQ表情/$1.gif'>");
+      return str;
+    }
+  </script>
+</body>
+
+</html>
