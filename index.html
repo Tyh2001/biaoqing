@@ -11,7 +11,22 @@
   <div class="box">
     <h3 class="title">Tyh 模拟表情发布测试系统 1.1版</h3>
     <textarea id="textarea" placeholder="今天有什么想说的？" maxlength="399"></textarea>
-    <button class="release-btn">发布</button>
+    <!-- 菜单栏 -->
+    <div class="menuBar">
+      <input type="file" id="file" multiple accept="image/*" hidden>
+
+      <!-- 添加图片按钮 -->
+      <div class="addImg">
+        <img class="addImg" src="./images/addimg.svg">
+        <span>添加图片</span>
+      </div>
+
+      <!-- 发布按钮 -->
+      <button class="release-btn">发布</button>
+    </div>
+
+    <!-- 预览图片的列表 -->
+    <div class="previewPicturesBox"></div>
 
     <!-- 表情列表 -->
     <div class="AddEmoticonsBox">
@@ -198,15 +213,9 @@
 
     <!-- 展示内容 -->
     <h4>你发布的内容是：</h4>
-    <ol class="testBoxTitle"></ol>
-  </div>
-
-  <div class="footer">
-    <p>版本号：1.1</p>
-    <p>更新时间：2021-2-5</p>
-    <p>修复Bug：再次发布表情直接被替换掉问题</p>
-    <p>新增内容：每次发布不会替换之前的内容，而是会继续添加</p>
-    <p>下个版本计划更新：多图片上传预览</p>
+    <ol class="testBoxTitle">
+      <!-- <div class="blogImg-box"></div> -->
+    </ol>
   </div>
 
   <script src="Js/My_jQ.js"></script>
@@ -252,6 +261,32 @@
       }
     }
 
+    // 表情转换
+    function transformation(str) {
+      str = str.replace(/\[em_([0-9]*)\]/g, "<img src='表情/emoji表情/$1.png'>");
+      str = str.replace(/\[qq_([0-9]*)\]/g, "<img src='表情/QQ表情/$1.gif'>");
+      return str;
+    }
+
+    // 将选择的图片添加到容器中
+    let file = $D("file"); // file input
+    let previewPicturesBox = $(".previewPicturesBox"); // 装图片的容器
+
+    $(".addImg").onclick = function () {
+      file.click()
+      // 当文本框发生变化时候
+      file.onchange = function () {
+        let fileLength = file.files.length; // 获取到上传文件的数组的长度
+        for (let i = 0; i < fileLength; i++) {
+          const blogImg = window.URL.createObjectURL(file.files[i]);
+          let previewPictures = document.createElement("img"); // 新建一个 img 标签
+          previewPictures.src = blogImg;
+          previewPictures.setAttribute("class", "previewPictures");
+          previewPicturesBox.appendChild(previewPictures);
+        }
+      }
+    }
+
     // 点击发布按钮
     $(".release-btn").onclick = function () {
       if ($D("textarea").value === "") {
@@ -260,19 +295,36 @@
         // 表情替换
         let textareaVal = $D("textarea").value;
         textareaVal = transformation(textareaVal);
+
+
+        // 新建一个 li 标签
         const newLi = document.createElement("li");
+
+
+        // 获取选择上传的图片 展示到博客中
+        let previewPicturesImg = $Al(".previewPictures"); // 获取到所有的需要上传的图片
+        for (let i = 0; i < previewPicturesImg.length; i++) {
+          let previewPicturesSrc = previewPicturesImg[i].getAttribute("src"); // 获取到每个需要上传图片的 Src属性值
+          let blogImgBoxImg = document.createElement("img"); // 新建一个 img 标签
+          blogImgBoxImg.setAttribute("src", previewPicturesSrc);
+          blogImgBoxImg.setAttribute("class", "previewPictures");
+          $(".testBoxTitle").appendChild(blogImgBoxImg); // 将新建的 img 标签放到容器里
+        }
+
+        // 新建一个 li 标签放到 ol 中去
         newLi.innerHTML = textareaVal;
+
+        // 将发布的文本内容添加到新的的 ol 的 li 列表中中去
         $(".testBoxTitle").appendChild(newLi);
+
         // 清空文本框
         $D("textarea").value = "";
-      }
-    }
+        // 清空上传超图片
+        $D("file").value = "";
+        // 清空展示图片预览的盒子
+        $(".previewPicturesBox").innerHTML = '';
 
-    // 表情转换
-    function transformation(str) {
-      str = str.replace(/\[em_([0-9]*)\]/g, "<img src='表情/emoji表情/$1.png'>");
-      str = str.replace(/\[qq_([0-9]*)\]/g, "<img src='表情/QQ表情/$1.gif'>");
-      return str;
+      }
     }
   </script>
 </body>
