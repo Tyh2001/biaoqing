@@ -9,7 +9,7 @@
 
 <body>
   <div class="box">
-    <h3 class="title">Tyh 模拟表情发布测试系统 1.1版</h3>
+    <h3 class="title">Tyh 模拟博客发布测试系统 2.0版</h3>
     <textarea id="textarea" placeholder="今天有什么想说的？" maxlength="399"></textarea>
     <!-- 菜单栏 -->
     <div class="menuBar">
@@ -213,9 +213,7 @@
 
     <!-- 展示内容 -->
     <h4>你发布的内容是：</h4>
-    <ol class="testBoxTitle">
-      <!-- <div class="blogImg-box"></div> -->
-    </ol>
+    <ol class="testBoxTitle"></ol>
   </div>
 
   <script src="Js/My_jQ.js"></script>
@@ -281,7 +279,7 @@
           const blogImg = window.URL.createObjectURL(file.files[i]);
           let previewPictures = document.createElement("img"); // 新建一个 img 标签
           previewPictures.src = blogImg;
-          previewPictures.setAttribute("class", "previewPictures");
+          previewPictures.setAttribute("class", "previewPicturesTop");
           previewPicturesBox.appendChild(previewPictures);
         }
       }
@@ -292,38 +290,33 @@
       if ($D("textarea").value === "") {
         alert("内容为空不能发表！")
       } else {
-        // 表情替换
+
+        const newLi = document.createElement("li"); // 新建一个 li 标签
+
+        // 表情替换 点击发布将表情添加到列表中
         let textareaVal = $D("textarea").value;
         textareaVal = transformation(textareaVal);
+        let divContent = document.createElement("div"); // 新建一个 div 标签
+        divContent.innerHTML = textareaVal
+        newLi.appendChild(divContent);
 
-
-        // 新建一个 li 标签
-        const newLi = document.createElement("li");
-
-
-        // 获取选择上传的图片 展示到博客中
-        let previewPicturesImg = $Al(".previewPictures"); // 获取到所有的需要上传的图片
+        // 获取选择上传的图片 添加到列表中
+        let previewPicturesImg = $Al(".previewPicturesTop"); // 获取到所有的需要上传的图片
         for (let i = 0; i < previewPicturesImg.length; i++) {
           let previewPicturesSrc = previewPicturesImg[i].getAttribute("src"); // 获取到每个需要上传图片的 Src属性值
           let blogImgBoxImg = document.createElement("img"); // 新建一个 img 标签
           blogImgBoxImg.setAttribute("src", previewPicturesSrc);
           blogImgBoxImg.setAttribute("class", "previewPictures");
-          $(".testBoxTitle").appendChild(blogImgBoxImg); // 将新建的 img 标签放到容器里
+          newLi.appendChild(blogImgBoxImg); // 将新建的 img 标签放到容器里
         }
-
-        // 新建一个 li 标签放到 ol 中去
-        newLi.innerHTML = textareaVal;
 
         // 将发布的文本内容添加到新的的 ol 的 li 列表中中去
         $(".testBoxTitle").appendChild(newLi);
 
-        // 清空文本框
+        // 清空文本框 & 上传的图片 & 展示图片预览的盒子
         $D("textarea").value = "";
-        // 清空上传超图片
         $D("file").value = "";
-        // 清空展示图片预览的盒子
         $(".previewPicturesBox").innerHTML = '';
-
       }
     }
   </script>
