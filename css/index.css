@@ -3,10 +3,26 @@
   padding: 0;
   user-select: none;
   font-family: "微软雅黑";
+  text-decoration: none;
 }
 .box {
   width: 550px;
   margin: 20px auto;
+}
+.box .myWeb {
+  height: 100px;
+  display: flex;
+  justify-content: space-between;
+}
+.box .myWeb a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #409eff;
+}
+.box .myWeb a img {
+  width: 20px;
+  height: 20px;
 }
 .box .title {
   text-align: center;
