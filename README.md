@@ -10,4 +10,4 @@ http://tianyuhao.icu
 
 tyh-ui
 
-http://tyh-ui.tianyuhao.icu
+http://tyhui.tianyuhao.icu
