@@ -1,13 +1,7 @@
-# 在线网站
+# 说明
 
-## 模拟表情发布系统
+模拟表情发布系统，使用原生 js 开发，可以实现选择 qq 表情，emoji 表情，颜文字发布效果，还有选择图片预览，多图片上传等功能，该项目仅用于效果演示测试
 
-http://biaoqing.tianyuhao.icu
+## 预览网站
 
-## 个人网站
-
-http://tianyuhao.icu
-
-## tyh-ui
-
-http://tyhui.tianyuhao.icu/v3
+http://biaoqing.tianyuhao.cn
